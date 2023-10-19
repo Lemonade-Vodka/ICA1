@@ -1,7 +1,7 @@
 for file in `ls ~/ICA1/fastq |grep fq$`
 do
 awk '{
-	if ($0 ~ /^[AGCT]/) {
+	if ($0 !~ /^[@+]/ && NF>1) {
 		sub(/^.{10}/, "")
 	}
     print
